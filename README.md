@@ -1,22 +1,21 @@
-# Physics
-Классы, отвечающие за физику (dll библиотека)
+# Sputnik
+Класс, отвечающий за спутник (dll библиотека)
 
-Класс Physics
+namespace Sputnik
+
+Класс Sputnik
 
 Константы:
 
 public const double G = 6.6743E-11; //гравитационная постоянная
 
-public const double M = 5.972E-11;  //масса Земли
+public const double Em = 5.972E-11;  //масса Земли
 
 public const double Ae = 6378200;   //большая полуось земного эллипсоида
 
 public const double Be = 6356900;   //малая полуось земного эллипсоида
 
 public const double Ee = 0.08166;   //эксцентриситет земного эллипсоида
-
-
-Класс Sputnik
 
 Поля:
 
