@@ -4,6 +4,7 @@
 namespace Sputnik
 
 Класс Physics
+
 Константы:
 
 public const double G = 6.6743E-11; //гравитационная постоянная
@@ -20,11 +21,37 @@ public const double Ee = 0.08166;   //эксцентриситет земног�
 
 Поля:
 
-List<SputnikGroup> SputnikList
+List<SputnikGroup> SputnikList //список спутников и групп спутников, входящих в группу
   
+public TypeOfGroup Type //тип группы
 
+Тип:
 
-Кдасс Sputnik
+public enum TypeOfGroup { Trawl, Web, Other, No }
+
+Конструкторы:
+
+public SputnikGroup()
+{
+    SputnikList = new List<SputnikGroup>();
+    Type = TypeOfGroup.No;
+}
+  
+public SputnikGroup(TypeOfGroup Type)
+{
+    SputnikList = new List<SputnikGroup>();
+    this.Type = Type;
+}
+  
+Свойства для чтения:
+
+public List<SputnikGroup> SputnikList
+  
+Свойства для чтения и записи
+
+public TypeOfGroup Type
+
+Класс Sputnik : SputnikGroup
 
 Поля:
 
@@ -43,14 +70,32 @@ private double m; //средняя аномалия
 Конструкторы:
 
 public Sputnik(double a, double e, double i, double l, double w, double m)
+{
+    this.a = a;
+    this.e = e;
+    this.i = i;
+    this.l = l;
+    this.w = w;
+    this.m = m;
+}
 
-public Sputnik() //задаёт значение большой полуоси, равной экваториальному радиусу Земли, остальные значения зануляет
+public Sputnik()
+{
+    a = Physics.Ae;
+    e = 0;
+    i = 0;
+    l = 0;
+    w = 0;
+    m = 0;
+}
 
 Методы:
 
 public void ChangeTrueAnomaly(double t) //при вызове изменяет истинную аномалию, аргумент — время, прошедшее в симуляции с последнего вызова.
 
 Свойства только для чтения:
+
+public double AngularVelocity //угловая скорость
 
 public double b //малая полуось орбиты
 
@@ -64,16 +109,60 @@ public double Ra //апофокусное расстояние орбиты
 
 public double Rp //перифокусное расстояние орбиты
 
+Свойства для чтения и записи аналогичны полям
+
+Абстрактный класс StaticObject
+
+Поля:
+
+protected double longitudes;//долгота
+
+protected double latitudes;//широта
+
+Конструкторы:
+
+public StaticObject()
+{
+    latitudes = longitudes = 0;
+}
+
+public StaticObject(double latitudes, double longitudes)
+{
+    this.latitudes = latitudes;
+    this.longitudes = longitudes;
+}
+
 Свойства для чтения и записи:
 
-public double A //большая полуось орбиты
+public double Longitudes //долгота
 
-public double E //эксцентриситет орбиты
+public double Latitudes //широта
 
-public double I //наклонение орбиты
+Класс ShootPoint : StaticObject
 
-public double L //долгота восходящего узла орбиты
+Поля:
 
-public double W //аргумент перицентра орбиты
+bool HasShot //снята ли точка
 
-public double M //средняя аномалия
+Конструкторы:
+
+public ShootPoint() : base()
+{
+    HasShot = false;
+}
+public ShootPoint(double latitudes, double longitudes) : base(latitudes, longitudes)
+{
+    HasShot = false;
+}
+
+Свойства для чтения и записи
+
+bool HasShot
+
+Класс ResetInformationItem : StaticObject
+
+Конструкторы:
+
+public ResetInformationItem() : base() { }
+
+public ResetInformationItem(double latitudes, double longitudes) : base(latitudes, longitudes) { }
