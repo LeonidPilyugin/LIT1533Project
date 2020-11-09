@@ -3,8 +3,7 @@
 
 namespace Sputnik
 
-Класс Sputnik
-
+Класс Physics
 Константы:
 
 public const double G = 6.6743E-11; //гравитационная постоянная
@@ -16,6 +15,16 @@ public const double Ae = 6378200;   //большая полуось земног
 public const double Be = 6356900;   //малая полуось земного эллипсоида
 
 public const double Ee = 0.08166;   //эксцентриситет земного эллипсоида
+
+Класс SputnikGroup
+
+Поля:
+
+List<SputnikGroup> SputnikList
+  
+
+
+Кдасс Sputnik
 
 Поля:
 
