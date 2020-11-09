@@ -9,7 +9,7 @@ namespace Sputnik
 
 public const double G = 6.6743E-11; //гравитационная постоянная
 
-public const double Em = 5.972E-11;  //масса Земли
+public const double Em = 5.972E24;  //масса Земли
 
 public const double Ae = 6378200;   //большая полуось земного эллипсоида
 
