@@ -150,6 +150,7 @@ public ShootPoint() : base()
 {
     HasShot = false;
 }
+
 public ShootPoint(double latitudes, double longitudes) : base(latitudes, longitudes)
 {
     HasShot = false;
