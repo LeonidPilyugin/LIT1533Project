@@ -5,7 +5,7 @@ namespace Sputnik
 
 * public static class Constants
 
-константы:
+*константы:
 
 public const double G = 6.6743E-11; //гравитационная постоянная
 
@@ -17,13 +17,13 @@ public const double Be = 6356900;   //малая полуось земного �
 
 * public class Ellips
 
-поля:
+*поля:
 
 protected double eccentricity; //эксцентриситет
 
 protected double A; //большая полуось
 
-конструкторы:
+*конструкторы:
 
 public Ellips()
 {
@@ -37,7 +37,7 @@ public Ellips(double a, double e)
     this.eccentricity = e;
 }
 
-свойства только для чтения:
+*свойства только для чтения:
 
 public double b //малая полуось
 
@@ -51,13 +51,13 @@ public double Ra //апофокусное расстояние
 
 public double Rp //перифокусное расстояние
 
-свойства для чтения и записи:
+*свойства для чтения и записи:
 
 public double a //большая полуось орбиты
 
 public double e //эксцентриситет
 
-статические методы:
+*статические методы:
 
 /*
   A a — большая полуось
@@ -138,7 +138,7 @@ public static double K(double e) // коэффициент сжатия
         
 * public class Orbit : Ellips
 
-поля:
+*поля:
 
 private double i //наклонение орбиты
 
@@ -146,7 +146,7 @@ private double l //долгота восходящего узла
 
 private double w //аргумент перицентра
 
-конструкторы:
+*конструкторы:
 
 public Orbit() : base()
 {
@@ -162,7 +162,7 @@ public Orbit(double a, double e, double i, double l, double w) : base(a, e)
     this.w = w;
 }
 
-свойства для чтения и записи:
+*свойства для чтения и записи:
 
 public double i //наклонение орбиты
 
@@ -174,11 +174,11 @@ public double w //аргумент перицентра
 
 * public class Sputnik : TypeInList
 
-поля:
+*поля:
 
 private Orbit orbit //орбита:
 
-конструкторы:
+*конструкторы:
 
 public Sputnik(double a, double e, double i, double l, double w, double m)
 {
@@ -192,15 +192,15 @@ public Sputnik()
     m = 0;
 }
 
-методы:
+*методы:
 
 public void ChangeTrueAnomaly(double t) //при вызове изменяет истинную аномалию, аргумент — время, прошедшее в симуляции с последнего вызова
 
-свойства для чтения:
+*свойства для чтения:
 
 public double AngularVelocity //угловая скорость
 
-свойства для чтения и записи:
+*свойства для чтения и записи:
 
 public double m //истинная аномалия
 
@@ -208,17 +208,17 @@ public Orbit orbit//орбита
 
 * public class SputnikGroup : TypeInList
 
-типы:
+*типы:
 
 public enum TypeOfGroup { Trawl, Web, Other, No }
 
-поля:
+*поля:
 
 private List<TypeInList> SputnikList//список спутников
 
 private TypeOfGroup Type//тип группы
 
-конструкторы:
+*конструкторы:
 
 public SputnikGroup()
 {
@@ -232,15 +232,15 @@ public SputnikGroup(TypeOfGroup Type)
     this.Type = Type;
 }
   
-поля для чтения и записи:
+*свойства для чтения и записи:
 
 public TypeOfGroup Type//тип группы
 
-поля для чтения:
+*свойства для чтения:
 
 public List<TypeInList> SputnikList//список спутников
   
-методы:
+*методы:
 
 public void Add(TypeInList sputnikgroup)//добавить элемент
 
@@ -250,13 +250,13 @@ public void Remove(TypeInList sputnikgroup)//удалить элемент
 
 * public abstract class StaticObject
 
-поля:
+*поля:
 
 protected double longitudes; //долгота
 
 protected double latitudes; //широта
 
-конструкторы:
+*конструкторы:
 
 public StaticObject()
 {
@@ -269,7 +269,7 @@ public StaticObject(double latitudes, double longitudes)
     this.longitudes = longitudes;
 }
 
-свойства для чтения и записи:
+*свойства для чтения и записи:
 
 public double Longitudes //долгота
 
@@ -279,11 +279,11 @@ public double Latitudes //широта
 
 * public class ShootPoint : StaticObject
 
-поля:
+*поля:
 
 private bool HasShot //снята ли точка
 
-конструкторы:
+*конструкторы:
 
 public ShootPoint() : base()
 {
@@ -295,6 +295,6 @@ public ShootPoint(double latitudes, double longitudes) : base(latitudes, longitu
     HasShot = false;
 }
 
-свойства для чтения и записи:
+*свойства для чтения и записи:
 
 public bool HasShot //снята ли точка
