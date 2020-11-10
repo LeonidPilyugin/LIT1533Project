@@ -3,7 +3,7 @@
 
 namespace Sputnik
 
-*public static class Constants
+* public static class Constants
 
 константы:
 
