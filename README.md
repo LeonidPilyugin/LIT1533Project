@@ -3,7 +3,7 @@
 
 namespace Sputnik
 
-public static class Constants
+*public static class Constants
 
 константы:
 
@@ -15,7 +15,7 @@ public const double Ae = 6378200;   //большая полуось земног
 
 public const double Be = 6356900;   //малая полуось земного эллипсоида
 
-public class Ellips
+*public class Ellips
 
 поля:
 
@@ -60,14 +60,14 @@ public double e //эксцентриситет
 статические методы:
 
 /*
- * A a — большая полуось
- * B b — малая полуось
- * E e — эксцентриситет
- * C c — фокальное расстояние
- * P p — фокальный параметр
- * Rp — перифокусное расстояние
- * Ra — апофокусное расстояние
- * Функции ниже строятся по типу: [Возвращаемый параметр]By[параметр 1][параметр2]([параметр1], [параметр2])
+  A a — большая полуось
+  B b — малая полуось
+  E e — эксцентриситет
+  C c — фокальное расстояние
+  P p — фокальный параметр
+  Rp — перифокусное расстояние
+  Ra — апофокусное расстояние
+  Функции ниже строятся по типу: [Возвращаемый параметр]By[параметр 1][параметр2]([параметр1], [параметр2])
   */
 
 public static double EByCA(double c, double a) 
@@ -136,7 +136,7 @@ public static double BByRaE(double Ra, double e)
 
 public static double K(double e) // коэффициент сжатия
         
-public class Orbit : Ellips
+*public class Orbit : Ellips
 
 поля:
 
@@ -170,9 +170,9 @@ public double l //долгота восходящего узла
 
 public double w //аргумент перицентра
 
-public abstract class TypeInList (нужен для того, чтобы можно было создать список из производных классов)
+*public abstract class TypeInList (нужен для того, чтобы можно было создать список из производных классов)
 
-public class Sputnik : TypeInList
+*public class Sputnik : TypeInList
 
 поля:
 
@@ -206,7 +206,7 @@ public double m //истинная аномалия
 
 public Orbit orbit//орбита
 
-public class SputnikGroup : TypeInList
+*public class SputnikGroup : TypeInList
 
 типы:
 
@@ -248,7 +248,7 @@ public void Clear()//удалить все элементы
 
 public void Remove(TypeInList sputnikgroup)//удалить элемент
 
-public abstract class StaticObject
+*public abstract class StaticObject
 
 поля:
 
@@ -275,9 +275,9 @@ public double Longitudes //долгота
 
 public double Latitudes //широта
 
-public class ResetInformationItem : StaticObject
+*public class ResetInformationItem : StaticObject
 
-public class ShootPoint : StaticObject
+*public class ShootPoint : StaticObject
 
 поля:
 
