@@ -1,6 +1,0 @@
-D:\Учёба\!Проект 10 класс\Код\Sputnik\Sputnik\bin\Debug\Sputnik.dll
-D:\Учёба\!Проект 10 класс\Код\Sputnik\Sputnik\bin\Debug\Sputnik.pdb
-D:\Учёба\!Проект 10 класс\Код\Sputnik\Sputnik\obj\Debug\Sputnik.csproj.CoreCompileInputs.cache
-D:\Учёба\!Проект 10 класс\Код\Sputnik\Sputnik\obj\Debug\Sputnik.dll
-D:\Учёба\!Проект 10 класс\Код\Sputnik\Sputnik\obj\Debug\Sputnik.pdb
-D:\Учёба\!Проект 10 класс\Код\Sputnik\Sputnik\obj\Debug\Sputnik.csprojAssemblyReference.cache
