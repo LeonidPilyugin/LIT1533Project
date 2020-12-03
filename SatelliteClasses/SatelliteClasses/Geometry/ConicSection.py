@@ -22,6 +22,8 @@ class ConicSection(object):
         2) SemiMajorAxis
     '''
 
+    __slots__ = ("_Eccentricity", "_SemiMajorAxis")
+
     def __init__(self):
         '''
         This constructor sets:

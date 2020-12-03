@@ -5,7 +5,7 @@ class Ellipse(ConicSection):
 
     '''
     This class discrabes ellipse. More information: https://en.wikipedia.org/wiki/Ellipse
-    Class Ellipse inherits from class ConicSection
+    Class Ellipse inherits from class ConicSection.
 
     Protected attributes:
         1) _Eccentricity
@@ -26,6 +26,8 @@ class Ellipse(ConicSection):
         1) Eccentricity
         2) SemiMajorAxis
     '''
+    
+    __slots__ = ("_Eccentricity", "_SemiMajorAxis")
 
     def __init__(self):
         '''

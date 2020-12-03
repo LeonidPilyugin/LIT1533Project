@@ -22,7 +22,13 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Satellites\ArtificialSatellites\MobileSatellite.py">
+    <Compile Include="EarthObjects\GroundObject.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EarthObjects\GroundStation.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EarthObjects\ShootPoint.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Geometry\ConicSection.py">
@@ -32,9 +38,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Orbits\EllipticOrbit.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Satellites\EllipticalOrbitSatellite.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Orbits\Orbit.py">
@@ -47,7 +50,7 @@
     <Compile Include="Satellites\SatelliteGroup.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Satellites\ArtificialSatellites\SmartSatellite.py">
+    <Compile Include="Satellites\SmartSatellite.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="UsefullFunctions.py">
@@ -74,9 +77,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Geometry\" />
+    <Folder Include="EarthObjects\" />
     <Folder Include="Satellites\" />
     <Folder Include="Orbits\" />
-    <Folder Include="Satellites\ArtificialSatellites\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

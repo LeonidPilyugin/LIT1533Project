@@ -5,7 +5,7 @@ class EllipticOrbit(Orbit, Ellipse):
 
     '''
     This class discrabes elliptical orbit. More information: https://en.wikipedia.org/wiki/Elliptic_orbit
-    Class EllipticOrbit inherits from classes Ellise and Orbit
+    Class EllipticOrbit inherits from classes Ellise and Orbit.
 
     Protected attributes:
         1) _Eccentricity
@@ -36,6 +36,8 @@ class EllipticOrbit(Orbit, Ellipse):
         5) PeriapsisArgument
     '''
     
+    __slots__ = ("_Inclination", "_AscendingNodeLongitude", "_PeriapsisArgument", "_Eccentricity", "_SemiMajorAxis")
+
     def __init__(self):
         '''
         This constructor sets:

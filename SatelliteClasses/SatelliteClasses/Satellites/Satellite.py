@@ -30,6 +30,8 @@ class Satellite(object):
         1) ChangeTrueAnomaly(TimeInterval)
         2) TimeInterval(StartTrueAnomaly, FinishTrueAnomaly)
     '''
+    
+    __slots__ = ("_TrueAnomaly", "_DirectionRatio", "_Name", "_Orbit")
 
     def __init__(self):
         '''
@@ -37,6 +39,10 @@ class Satellite(object):
         _Eccentricity = 0
         _SemiMajorAxis = 6400000
         _Inclination = _AscendingNodeLongitude = _PeriapsisArgument = 0
+        _Name = "New Satellite"
+        _TrueAnomaly = 0
+        _DirectionRatio = 1
+        _Orbit = EllipticOrbit()
         '''
         self._TrueAnomaly = 0.0
         self._DirectionRatio = 1

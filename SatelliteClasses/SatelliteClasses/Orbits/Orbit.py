@@ -22,6 +22,8 @@ class Orbit(object):
         3) PeriapsisArgument
     '''
 
+    __slots__ = ("_Inclination", "_AscendingNodeLongitude", "_PeriapsisArgument")
+
     def __init__(self):
         '''
         This constructor sets:
@@ -56,24 +58,24 @@ class Orbit(object):
     @Inclination.setter
     def Inclination(self, value : float):
         '''
-        Sets inclination. It must be less then pi and greater than or equal to -pi.
+        Sets inclination. It must be less than pi and greater than or equal to -pi.
         '''
         if EllipseAngleCheck(value):
             self._Inclination = value
             pass
         else:
-            raise ValueError("Inclination must be less then pi and greater than or equal to -pi")
+            raise ValueError("Inclination must be less than pi and greater than or equal to -pi")
          
     @AscendingNodeLongitude.setter
     def AscendingNodeLongitude(self, value : float):
         '''
-        Sets the longitude of ascending node. It must be less then pi and greater than or equal to -pi.
+        Sets the longitude of ascending node. It must be less than pi and greater than or equal to -pi.
         '''
         if EllipseAngleCheck(value):
             self._AscendingNodeLongitude = value
             pass
         else:
-            raise ValueError("AscendingNodeLongitude must be less then pi and greater than or equal to -pi")
+            raise ValueError("AscendingNodeLongitude must be less than pi and greater than or equal to -pi")
         pass
 
     @PeriapsisArgument.setter
@@ -85,7 +87,7 @@ class Orbit(object):
             self._PeriapsisArgument = value
             pass
         else:
-            raise ValueError("PeriapsisArgument must be less then pi and greater than or equal to -pi")
+            raise ValueError("PeriapsisArgument must be less than pi and greater than or equal to -pi")
         pass
     pass
 
