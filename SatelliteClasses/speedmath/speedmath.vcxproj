@@ -144,9 +144,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="speedmath.cpp" />
+    <ClCompile Include="ConicSections.cpp" />
+    <ClCompile Include="Orbits.cpp" />
+    <ClCompile Include="pyfunctions.cpp" />
+    <ClCompile Include="c++functions.cpp" />
+    <ClCompile Include="Satellites.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ConicSections.h" />
+    <ClInclude Include="constants.h" />
+    <ClInclude Include="Orbits.h" />
+    <ClInclude Include="Satellites.h" />
     <ClInclude Include="speedmath.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>a6aba663-f1e5-41ec-830f-79149f69b57b</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>SatelliteClasses.py</StartupFile>
+    <StartupFile>main_module.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,38 +22,20 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="EarthObjects\GroundObject.py">
+    <Compile Include="conic_sections.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="EarthObjects\GroundStation.py">
+    <Compile Include="ground_objects.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="EarthObjects\ShootPoint.py">
+    <Compile Include="orbits.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Geometry\ConicSection.py">
+    <Compile Include="satellites.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Geometry\Ellipse.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Orbits\EllipticOrbit.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Orbits\Orbit.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Satellites\Satellite.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="SatelliteClasses.py" />
-    <Compile Include="Satellites\SatelliteGroup.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Satellites\SmartSatellite.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="UsefullFunctions.py">
+    <Compile Include="main_module.py" />
+    <Compile Include="usefull_functions.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -74,12 +56,6 @@
       <Project>{7d95bcb2-313e-4290-bdef-27c4478672c6}</Project>
       <Private>True</Private>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Geometry\" />
-    <Folder Include="EarthObjects\" />
-    <Folder Include="Satellites\" />
-    <Folder Include="Orbits\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
