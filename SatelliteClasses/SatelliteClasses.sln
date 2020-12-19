@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30711.63
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "SatelliteClasses", "SatelliteClasses\SatelliteClasses.pyproj", "{A6ABA663-F1E5-41EC-830F-79149F69B57B}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "speedmath", "speedmath\speedmath.vcxproj", "{7D95BCB2-313E-4290-BDEF-27C4478672C6}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Extention", "Extention\Extention.vcxproj", "{8BD7D884-62A8-42DE-A833-EC04BD35C079}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,16 +23,16 @@ Global
 		{A6ABA663-F1E5-41EC-830F-79149F69B57B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A6ABA663-F1E5-41EC-830F-79149F69B57B}.Release|x64.ActiveCfg = Release|Any CPU
 		{A6ABA663-F1E5-41EC-830F-79149F69B57B}.Release|x86.ActiveCfg = Release|Any CPU
-		{7D95BCB2-313E-4290-BDEF-27C4478672C6}.Debug|Any CPU.ActiveCfg = Debug|Win32
-		{7D95BCB2-313E-4290-BDEF-27C4478672C6}.Debug|x64.ActiveCfg = Debug|x64
-		{7D95BCB2-313E-4290-BDEF-27C4478672C6}.Debug|x64.Build.0 = Debug|x64
-		{7D95BCB2-313E-4290-BDEF-27C4478672C6}.Debug|x86.ActiveCfg = Debug|Win32
-		{7D95BCB2-313E-4290-BDEF-27C4478672C6}.Debug|x86.Build.0 = Debug|Win32
-		{7D95BCB2-313E-4290-BDEF-27C4478672C6}.Release|Any CPU.ActiveCfg = Release|Win32
-		{7D95BCB2-313E-4290-BDEF-27C4478672C6}.Release|x64.ActiveCfg = Release|x64
-		{7D95BCB2-313E-4290-BDEF-27C4478672C6}.Release|x64.Build.0 = Release|x64
-		{7D95BCB2-313E-4290-BDEF-27C4478672C6}.Release|x86.ActiveCfg = Release|Win32
-		{7D95BCB2-313E-4290-BDEF-27C4478672C6}.Release|x86.Build.0 = Release|Win32
+		{8BD7D884-62A8-42DE-A833-EC04BD35C079}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{8BD7D884-62A8-42DE-A833-EC04BD35C079}.Debug|x64.ActiveCfg = Debug|x64
+		{8BD7D884-62A8-42DE-A833-EC04BD35C079}.Debug|x64.Build.0 = Debug|x64
+		{8BD7D884-62A8-42DE-A833-EC04BD35C079}.Debug|x86.ActiveCfg = Debug|Win32
+		{8BD7D884-62A8-42DE-A833-EC04BD35C079}.Debug|x86.Build.0 = Debug|Win32
+		{8BD7D884-62A8-42DE-A833-EC04BD35C079}.Release|Any CPU.ActiveCfg = Release|Win32
+		{8BD7D884-62A8-42DE-A833-EC04BD35C079}.Release|x64.ActiveCfg = Release|x64
+		{8BD7D884-62A8-42DE-A833-EC04BD35C079}.Release|x64.Build.0 = Release|x64
+		{8BD7D884-62A8-42DE-A833-EC04BD35C079}.Release|x86.ActiveCfg = Release|Win32
+		{8BD7D884-62A8-42DE-A833-EC04BD35C079}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

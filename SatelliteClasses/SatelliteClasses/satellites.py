@@ -1,11 +1,13 @@
 import math
 import aiomas
-import speedmath
 from usefull_functions import *
 import orbits
+from _speedmath import *
 
+# определить граничные значения КПО
 
-
+class SatelliteMethodError(Exception):
+    pass
 
 class Satellite(object):
 
@@ -16,7 +18,7 @@ class Satellite(object):
     Attributes:
         1) _true_anomaly
         2) _direction_ratio
-        3) _name
+        3) _id
         4) _orbit
 
     Properties:
@@ -45,7 +47,7 @@ class Satellite(object):
         _Inclination = 0.0
         _AscendingNodeLongitude = 0.0
         _PeriapsisArgument = 0.0
-        _Name = "New Satellite"
+        _id = "New Satellite"
         _TrueAnomaly = 0.0
         _DirectionRatio = 1
         _Orbit = EllipticOrbit()
@@ -53,15 +55,13 @@ class Satellite(object):
         super().__init__()
         self._true_anomaly = 0.0
         self._direction_ratio = 1
-        self._name = "New Satellite"
+        self._id = "New Satellite"
         self._orbit = orbits.EllipticOrbit()
         pass
 
 
-    def split_into_attributes(self):
-        return self._orbit.split_into_attributes() + \
-               (self._true_anomaly, self._direction_ratio, self._name)
-
+    def parse(self):
+        return self._orbit.parse() + (self._true_anomaly, self.direction_ratio)
 
     @property
     def true_anomaly(self):
@@ -71,18 +71,18 @@ class Satellite(object):
         return self._true_anomaly
 
     @property
-    def direction_ratio(self): ##
+    def direction_ratio(self):
         '''
         Returns direction ratio.
         '''
         return self._direction_ratio
 
     @property
-    def name(self):
+    def id(self):
         '''
-        Returns name.
+        Returns id.
         '''
-        return self._name
+        return self._id
 
     @property
     def orbit(self):
@@ -123,13 +123,13 @@ class Satellite(object):
                            with EllipticalOrbit. If you want to use other \
                            orbit types, you should edit it.")
 
-    @name.setter
-    def name(self, value : str):
+    @id.setter
+    def id(self, value : str):
         '''
         Sets name. It must be string.
         '''
         if isinstance(value, str):
-            self._name = value
+            self._id = value
             pass
         else:
             raise ValueError("Name must be a string")
@@ -153,16 +153,13 @@ class Satellite(object):
         Changes true anomaly by time interval.
         This method works correctly with eccentricity <= 0.8
         '''
-        if time_interval <= 0.0:
-            raise ValueError("time_interval must be a positive number")
         if isinstance(self._orbit, orbits.EllipticOrbit):
-            self._true_anomaly = \
-                speedmath.elliptic_orbit_true_anomaly(self.split_into_attributes(), time_interval)
+            self._true_anomaly = compute_elliptic_orbit_true_anomaly(self.parse(), time_interval)
             pass
         else:
-            raise Warning("This method works only with EllipticOrbit. \
-                           If you want to use other orbit types, \
-                           you should edit it.")
+            raise SatelliteMethodError("This method works only with \
+            EllipticOrbit. If you want to use other orbit types, \
+            you should edit it.")
 
     def time_interval(self, finish_true_anomaly : float):
         '''
@@ -172,15 +169,23 @@ class Satellite(object):
             raise ValueError("finish_true_anomaly must be less then pi and \
                               greater than or equal to -pi.")
         if isinstance(self._orbit, orbits.EllipticOrbit):
-            return speedmath.elliptic_orbit_time_interval(self.split_into_attributes(), 
+            return speedmath.compute_elliptic_orbit_time_interval(self.parse(), 
                                                           finish_true_anomaly)
         else:
-            raise Warning("time_interval works only with \
+            raise SatelliteMethodError("time_interval works only with \
                            EllipticOrbit. If you want to use other \
                            orbit types, you should edit it.")
 
     pass
 
+
+#class MobileSatellite(Satellite):
+
+
+
+    #def __init__(self):
+        #super().__init__()
+        #self.
 
 class SmartSatellite(aiomas.Agent, Satellite):
 
@@ -193,13 +198,12 @@ class SmartSatellite(aiomas.Agent, Satellite):
 
     def __init__(self, container):
         super().__init__(container)
+        can_contact = True
         pass
 
     @aiomas.expose
     def can_shoot(self, shoot_point):
-        return speedmath.can_shoot(self.split_into_attributes())
-
-
+        return can_shoot(self.parse())
 
     pass
 
@@ -211,21 +215,21 @@ class SatelliteGroup(object):
     Class SatelliteGroup describes group of satellites.
 
     Attributes:
-        1) _SatelliteList
-        2) _Name
+        1) _satellite_list
+        2) _id
 
     Properties:
-        1) Name
+        1) id
 
     Setters:
-        1) Name
+        1) id
         2) Lenth
 
     Methods:
-        1) Append(item)
-        2) Clear()
-        3) Index(item)
-        4) Remove(item)
+        1) append(item)
+        2) clear()
+        3) index(item)
+        4) remove(item)
 
     Others:
         1) indexers (__getitem__, __setitem__, __delitem__)
@@ -239,78 +243,78 @@ class SatelliteGroup(object):
         _Name = "New group"
         '''
         super().__init__()
-        self._SatelliteList = list()
-        self._Name = "New group"
+        self._satellite_list = list()
+        self._id = "New group"
         pass
 
 
     @property
-    def Name(self):
+    def id(self):
         '''
         Returns name
         '''
-        return self._Name
+        return self._id
 
 
-    @Name.setter
-    def Name(self, Name):
+    @id.setter
+    def id(self, id):
         '''
         Sets name. It must be string
         '''
-        if isinstance(Name, str):
-            self._Name = Name
+        if isinstance(id, str):
+            self._id = id
             pass
         else:
             raise ValueError("Name must be string")
         pass
 
 
-    def Append(self, item):
+    def append(self, item):
         '''
         Appends new item to list. It must be Satellite or 
         SatelliteGroup object or their child
         '''
         if isinstance(item, Satellite) or isinstance(item, SatelliteGroup):
-            self._SatelliteList.append(item)
+            self._satellite_list.append(item)
             pass
         else:
             raise ValueError("Item must be Satellite or \
                               SatelliteGroup object or their child")
         pass
 
-    def Clear(self):
+    def clear(self):
         '''
         Does the same that list.clear()
         '''
-        self._SatelliteList.clear()
+        self._satellite_list.clear()
         pass
 
-    def Index(self, item):
+    def index(self, item):
         '''
         Does the same that list.index(item)
         '''
-        return self._SatelliteList.index(item)
+        return self._satellite_list.index(item)
 
     @property
-    def Lenth(self):
+    def lenth(self):
         '''
         Does the same that len(list)
         '''
-        return len(self._SatelliteList)
+        return len(self._satellite_list)
     
-    def Remove(self, item):
+    def remove(self, item):
         '''
         Does the same that list.remove(item)
         '''
-        self._SatelliteList.remove(item)
+        self._satellite_list.remove(item)
         pass
 
     def __getitem__(self, key):
-        return self._SatelliteList[key]
+        return self._satellite_list[key]
 
     def __setitem__(self, key, item):
         if isinstance(item, Satellite) or isinstance(item, SatelliteGroup):
-            self._SatelliteList[key] = item
+            self._satellite_list[key] = item
             pass
         else:
             raise ValueError("Item must be Satellite or \
@@ -318,7 +322,7 @@ class SatelliteGroup(object):
         pass
 
     def __delitem__(self, key):
-        del self._SatelliteList[key]
+        del self._satellite_list[key]
         pass
 
     pass

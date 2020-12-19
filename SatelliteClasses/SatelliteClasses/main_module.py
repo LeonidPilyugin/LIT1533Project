@@ -15,11 +15,26 @@ import math
 
 import satellites
 sat = satellites.Satellite()
-sat.Eccentricity = 0.4
-sat.TrueAnomaly = 3
+sat.orbit.eccentricity = 0.4
+sat.true_anomaly = 3
+sat.direction_ratio = -1
+
+print(sat.orbit.eccentricity)
+print(sat.orbit.semi_latus_rectum)
+print(sat.orbit.focal_parameter)
+print(sat.orbit.periapsis_argument)
+print(sat.orbit.linear_eccentricity)
+print(sat.orbit.semi_minor_axis)
+
+#a = sat.true_anomaly
 Time = 2 * math.pi / math.sqrt(3.986e14 / math.pow(6400000, 3))
-print(time.clock())
+print()
+start_time = time.time()
 for i in range(100000):
     sat.change_true_anomaly(Time/100000)
-print(time.clock())
-
+    #print(sat.true_anomaly)
+print(time.time() - start_time)
+print()
+print(sat.true_anomaly - 3)
+#print(a)
+#print(Time)

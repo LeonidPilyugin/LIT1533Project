@@ -1,5 +1,5 @@
 import math
-import speedmath
+from _speedmath import *
 
 '''
 Classes:
@@ -44,7 +44,7 @@ class ConicSection(object):
         pass
 
 
-    def split_into_attributes(self):
+    def parse(self):
         return self._eccentricity, self._semi_major_axis
      
 
@@ -157,49 +157,49 @@ class Ellipse(ConicSection):
         '''
         Returns semi-minor axis.
         '''
-        return speedmath.ellipse_semiminor_axis(self.split_into_attributes())
+        return compute_ellipse_semi_minor_axis(self.parse())
 
     @property
     def aspect_ratio(self):
         '''
         Returns aspect ratio.
         '''
-        return speedmath.ellipse_aspect_ratio(self.split_into_attributes())
+        return compute_ellipse_aspect_ratio(self.parse())
 
     @property
     def perifocus_distance(self):
         '''
         Returns perifocus distance.
         '''
-        return speedmath.ellipse_perifocus_distance(self.split_into_attributes())
+        return compute_ellipse_perifocus_distance(self.parse())
 
     @property
     def apothecure_distance(self):
         '''
         Returns apothecure distance.
         '''
-        return speedmath.ellipse_apothecure_distance(self.split_into_attributes())
+        return compute_ellipse_apothecure_distance(self.parse())
 
     @property
     def semi_latus_rectum(self):
         '''
         Returns semi-latus rectum.
         '''
-        return speedmath.ellipse_semi_latus_rectum(self.split_into_attributes())
+        return compute_ellipse_semi_latus_rectum(self.parse())
 
     @property
     def linear_eccentricity(self):
         '''
         Returns linear eccentricity.
         '''
-        return speedmath.ellipse_linear_eccentricity(self.split_into_attributes())
+        return compute_ellipse_linear_eccentricity(self.parse())
 
     @property
     def focal_parameter(self):
         '''
         Returns focal parameter.
         '''
-        return speedmath.ellipse_focal_parameter(self.split_into_attributes())
+        return compute_ellipse_focal_parameter(self.parse())
     
 
     @ConicSection.eccentricity.setter

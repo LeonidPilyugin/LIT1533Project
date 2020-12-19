@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Исходные файлы\objects3D">
+      <UniqueIdentifier>{7e2437db-133a-460f-a72d-e53954014de9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\objects3D">
+      <UniqueIdentifier>{e25b4782-66c1-4112-9423-130af34f9c29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\conicsections">
+      <UniqueIdentifier>{e500a155-70e0-422d-974c-9025e54567d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\conicsections">
+      <UniqueIdentifier>{7f8c8c8f-a69d-42a4-9165-cb87e9407ab9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\orbits">
+      <UniqueIdentifier>{6787de90-846a-44df-af73-d9194dd307f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\orbits">
+      <UniqueIdentifier>{7991079f-8aff-40e6-8eb2-9aeae32338d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\satellites">
+      <UniqueIdentifier>{e3849a53-44af-4e1a-b9ec-4b21888b9d9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\satellites">
+      <UniqueIdentifier>{d2bdd10c-3770-4361-b804-ee96087cb20a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\groundobjects">
+      <UniqueIdentifier>{46ff1554-795c-4b8f-88c4-a95cf493e0df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\groundobjects">
+      <UniqueIdentifier>{298955c1-8431-4c2f-8e7c-1e3cf592a17a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="extention.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="usefullthings.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="object3D.cpp">
+      <Filter>Исходные файлы\objects3D</Filter>
+    </ClCompile>
+    <ClCompile Include="point3D.cpp">
+      <Filter>Исходные файлы\objects3D</Filter>
+    </ClCompile>
+    <ClCompile Include="segment3D.cpp">
+      <Filter>Исходные файлы\objects3D</Filter>
+    </ClCompile>
+    <ClCompile Include="conicsection.cpp">
+      <Filter>Исходные файлы\conicsections</Filter>
+    </ClCompile>
+    <ClCompile Include="ellipse.cpp">
+      <Filter>Исходные файлы\conicsections</Filter>
+    </ClCompile>
+    <ClCompile Include="orbit.cpp">
+      <Filter>Исходные файлы\orbits</Filter>
+    </ClCompile>
+    <ClCompile Include="ellipticorbit.cpp">
+      <Filter>Исходные файлы\orbits</Filter>
+    </ClCompile>
+    <ClCompile Include="ellipticsatellite.cpp">
+      <Filter>Исходные файлы\satellites</Filter>
+    </ClCompile>
+    <ClCompile Include="satellite.cpp">
+      <Filter>Исходные файлы\satellites</Filter>
+    </ClCompile>
+    <ClCompile Include="groundobject.cpp">
+      <Filter>Исходные файлы\groundobjects</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="extention.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="usefullthings.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="point3D.h">
+      <Filter>Файлы заголовков\objects3D</Filter>
+    </ClInclude>
+    <ClInclude Include="object3D.h">
+      <Filter>Файлы заголовков\objects3D</Filter>
+    </ClInclude>
+    <ClInclude Include="segment3D.h">
+      <Filter>Файлы заголовков\objects3D</Filter>
+    </ClInclude>
+    <ClInclude Include="conicsection.h">
+      <Filter>Файлы заголовков\conicsections</Filter>
+    </ClInclude>
+    <ClInclude Include="ellipse.h">
+      <Filter>Файлы заголовков\conicsections</Filter>
+    </ClInclude>
+    <ClInclude Include="orbit.h">
+      <Filter>Файлы заголовков\orbits</Filter>
+    </ClInclude>
+    <ClInclude Include="ellipticorbit.h">
+      <Filter>Файлы заголовков\orbits</Filter>
+    </ClInclude>
+    <ClInclude Include="ellipticsatellite.h">
+      <Filter>Файлы заголовков\satellites</Filter>
+    </ClInclude>
+    <ClInclude Include="satellite.h">
+      <Filter>Файлы заголовков\satellites</Filter>
+    </ClInclude>
+    <ClInclude Include="groundobject.h">
+      <Filter>Файлы заголовков\groundobjects</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

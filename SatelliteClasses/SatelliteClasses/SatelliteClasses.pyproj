@@ -28,6 +28,9 @@
     <Compile Include="ground_objects.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="objects3D.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="orbits.py">
       <SubType>Code</SubType>
     </Compile>
@@ -51,6 +54,11 @@
     </Interpreter>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Extention\Extention.vcxproj">
+      <Name>Extention</Name>
+      <Project>{8bd7d884-62a8-42de-a833-ec04bd35c079}</Project>
+      <Private>True</Private>
+    </ProjectReference>
     <ProjectReference Include="..\speedmath\speedmath.vcxproj">
       <Name>speedmath</Name>
       <Project>{7d95bcb2-313e-4290-bdef-27c4478672c6}</Project>

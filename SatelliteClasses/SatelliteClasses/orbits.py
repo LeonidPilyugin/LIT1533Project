@@ -47,7 +47,7 @@ class Orbit(object):
         pass
 
 
-    def split_into_attributes(self):
+    def parse(self):
         return (self._inclination, self._ascending_node_longitude,
                 self._periapsis_argument)
 
@@ -171,7 +171,7 @@ class EllipticOrbit(Orbit, conic_sections.Ellipse):
 
 
 
-    def split_into_attributes(self):
+    def parse(self):
         return self._eccentricity, self.semi_major_axis, self._inclination, \
                self._ascending_node_longitude, self._periapsis_argument
 

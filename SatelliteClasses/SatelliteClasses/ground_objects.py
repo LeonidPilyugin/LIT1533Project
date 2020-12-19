@@ -31,6 +31,8 @@ class GroundObject(object):
         self._latitude = 0.0
         pass
 
+    def parse(self):
+        return self.longitude, self.latitude
 
     @property
     def longitude(self):
@@ -95,11 +97,11 @@ class GroundStation(GroundObject):
 
 
 
-class ShootPoint(GroundObject):
+class GroundTarget(GroundObject):
 
     '''
     This class describes point to be photographed by the satellite.
-    Class ShootPoint inherits from class GroundObject.
+    Class GroundTarget inherits from class GroundObject.
 
     Attributes:
         1) _longitude
