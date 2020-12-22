@@ -16,16 +16,16 @@ ConicSection::ConicSection(double eccentricity, double semi_major_axis)
 	this->semi_major_axis = semi_major_axis;
 }
 
-ConicSection::ConicSection(PyObject* tuple)
+ConicSection::ConicSection(PyObject* tuple) :
+	ConicSection(PyTuple_GetItem(tuple, 0), PyTuple_GetItem(tuple, 1))
 {
-	set_tuple(tuple);
+
 }
 
-ConicSection::ConicSection(PyObject* eccentricity, PyObject* semi_major_axis)
+ConicSection::ConicSection(PyObject* eccentricity, PyObject* semi_major_axis) :
+	ConicSection(PyFloat_AsDouble(eccentricity), PyFloat_AsDouble(semi_major_axis))
 {
-	this->eccentricity = PyFloat_AsDouble(eccentricity);
-	this->semi_major_axis = PyFloat_AsDouble(semi_major_axis);
-	//std::cout << eccentricity << std::endl << semi_major_axis << std::endl;
+
 }
 
 double ConicSection::get_eccentricity()

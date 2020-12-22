@@ -16,15 +16,16 @@ GroundObject::GroundObject(double longitude, double latitude)
 	this->latitude = latitude;
 }
 
-GroundObject::GroundObject(PyObject* tuple)
+GroundObject::GroundObject(PyObject* tuple) :
+	GroundObject(PyTuple_GetItem(tuple, 0), PyTuple_GetItem(tuple, 1))
 {
-	set_tuple(tuple);
+
 }
 
-GroundObject::GroundObject(PyObject* longitude, PyObject* latitude)
+GroundObject::GroundObject(PyObject* longitude, PyObject* latitude) :
+	GroundObject(PyFloat_AsDouble(longitude), PyFloat_AsDouble(latitude))
 {
-	this->longitude = PyFloat_AsDouble(longitude);
-	this->latitude = PyLong_AsLong(latitude);
+
 }
 
 double GroundObject::get_longitude()
@@ -85,7 +86,7 @@ Point3D GroundObject::get_point(DateTime* date_time)
 	double x = EARTH_MEAN_RADIUS * cos(latitude) * cos(longitude);
 	double y = EARTH_MEAN_RADIUS * sin(latitude);
 	double z = EARTH_MEAN_RADIUS * cos(latitude) * sin(longitude);
-	double star_time = get_star_time(date_time);
+	double star_time = date_time->star_time();
 	double cw = cos(star_time);
 	double sw = sin(star_time);
 

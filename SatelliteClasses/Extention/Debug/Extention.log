@@ -1,4 +1,6 @@
 ﻿  conicsection.cpp
+  date.cpp
+  datetime.cpp
   ellipse.cpp
   ellipticsatellite.cpp
   extention.cpp
@@ -10,6 +12,7 @@
   satellite.cpp
 D:\Учёба\!Проект 10 класс\Код\Physics\SatelliteClasses\Extention\satellite.cpp(58,21): warning C4244: =: преобразование "double" в "int", возможна потеря данных
   segment3D.cpp
+  time.cpp
   usefullthings.cpp
   Создание кода...
      Создается библиотека D:\Учёба\!Проект 10 класс\Код\Physics\SatelliteClasses\Debug\_speedmath.lib и объект D:\Учёба\!Проект 10 класс\Код\Physics\SatelliteClasses\Debug\_speedmath.exp

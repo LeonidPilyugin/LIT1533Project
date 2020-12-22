@@ -30,7 +30,7 @@ bool set_elliptic_angle(double* angle, double value)
 	return set_symmetric_angle(angle, value, PI);
 }
 
-double get_star_time(DateTime* date_time)
+/*double get_star_time(DateTime* date_time)
 {
 	double julian_day = 367.0 * date_time->year -
 		floor((7.0 * (date_time->year + floor((date_time->month + 9.0) / 12.0))) * 0.25) +
@@ -50,4 +50,4 @@ double get_star_time(DateTime* date_time)
 		star_time += 2 * PI;
 
 	return star_time;
-}
+}*/

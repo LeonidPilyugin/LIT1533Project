@@ -146,6 +146,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="conicsection.cpp" />
+    <ClCompile Include="date.cpp" />
+    <ClCompile Include="datetime.cpp" />
     <ClCompile Include="ellipse.cpp" />
     <ClCompile Include="ellipticsatellite.cpp" />
     <ClCompile Include="extention.cpp" />
@@ -156,10 +158,13 @@
     <ClCompile Include="ellipticorbit.cpp" />
     <ClCompile Include="satellite.cpp" />
     <ClCompile Include="segment3D.cpp" />
+    <ClCompile Include="time.cpp" />
     <ClCompile Include="usefullthings.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="conicsection.h" />
+    <ClInclude Include="date.h" />
+    <ClInclude Include="datetime.h" />
     <ClInclude Include="ellipse.h" />
     <ClInclude Include="ellipticsatellite.h" />
     <ClInclude Include="groundobject.h" />
@@ -167,6 +172,7 @@
     <ClInclude Include="orbit.h" />
     <ClInclude Include="point3D.h" />
     <ClInclude Include="segment3D.h" />
+    <ClInclude Include="time.h" />
     <ClInclude Include="usefullthings.h" />
     <ClInclude Include="extention.h" />
     <ClInclude Include="ellipticorbit.h" />

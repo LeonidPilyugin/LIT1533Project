@@ -13,18 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Исходные файлы\objects3D">
-      <UniqueIdentifier>{7e2437db-133a-460f-a72d-e53954014de9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Файлы заголовков\objects3D">
-      <UniqueIdentifier>{e25b4782-66c1-4112-9423-130af34f9c29}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\conicsections">
-      <UniqueIdentifier>{e500a155-70e0-422d-974c-9025e54567d8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Файлы заголовков\conicsections">
-      <UniqueIdentifier>{7f8c8c8f-a69d-42a4-9165-cb87e9407ab9}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Файлы заголовков\orbits">
       <UniqueIdentifier>{6787de90-846a-44df-af73-d9194dd307f0}</UniqueIdentifier>
     </Filter>
@@ -37,11 +25,29 @@
     <Filter Include="Файлы заголовков\satellites">
       <UniqueIdentifier>{d2bdd10c-3770-4361-b804-ee96087cb20a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Исходные файлы\groundobjects">
+    <Filter Include="Исходные файлы\date and time">
+      <UniqueIdentifier>{80dbe30d-015d-4227-9607-1fa93ddd2e72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\ground objects">
       <UniqueIdentifier>{46ff1554-795c-4b8f-88c4-a95cf493e0df}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Файлы заголовков\groundobjects">
+    <Filter Include="Исходные файлы\conic sections">
+      <UniqueIdentifier>{e500a155-70e0-422d-974c-9025e54567d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\objects 3D">
+      <UniqueIdentifier>{7e2437db-133a-460f-a72d-e53954014de9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\conic sections">
+      <UniqueIdentifier>{7f8c8c8f-a69d-42a4-9165-cb87e9407ab9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\ground objects">
       <UniqueIdentifier>{298955c1-8431-4c2f-8e7c-1e3cf592a17a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\objects 3D">
+      <UniqueIdentifier>{e25b4782-66c1-4112-9423-130af34f9c29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\date and time">
+      <UniqueIdentifier>{253273f9-dd68-4c2c-bdcf-856237693c82}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -52,19 +58,19 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="object3D.cpp">
-      <Filter>Исходные файлы\objects3D</Filter>
+      <Filter>Исходные файлы\objects 3D</Filter>
     </ClCompile>
     <ClCompile Include="point3D.cpp">
-      <Filter>Исходные файлы\objects3D</Filter>
+      <Filter>Исходные файлы\objects 3D</Filter>
     </ClCompile>
     <ClCompile Include="segment3D.cpp">
-      <Filter>Исходные файлы\objects3D</Filter>
+      <Filter>Исходные файлы\objects 3D</Filter>
     </ClCompile>
     <ClCompile Include="conicsection.cpp">
-      <Filter>Исходные файлы\conicsections</Filter>
+      <Filter>Исходные файлы\conic sections</Filter>
     </ClCompile>
     <ClCompile Include="ellipse.cpp">
-      <Filter>Исходные файлы\conicsections</Filter>
+      <Filter>Исходные файлы\conic sections</Filter>
     </ClCompile>
     <ClCompile Include="orbit.cpp">
       <Filter>Исходные файлы\orbits</Filter>
@@ -79,7 +85,16 @@
       <Filter>Исходные файлы\satellites</Filter>
     </ClCompile>
     <ClCompile Include="groundobject.cpp">
-      <Filter>Исходные файлы\groundobjects</Filter>
+      <Filter>Исходные файлы\ground objects</Filter>
+    </ClCompile>
+    <ClCompile Include="datetime.cpp">
+      <Filter>Исходные файлы\date and time</Filter>
+    </ClCompile>
+    <ClCompile Include="date.cpp">
+      <Filter>Исходные файлы\date and time</Filter>
+    </ClCompile>
+    <ClCompile Include="time.cpp">
+      <Filter>Исходные файлы\date and time</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -90,19 +105,19 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="point3D.h">
-      <Filter>Файлы заголовков\objects3D</Filter>
+      <Filter>Файлы заголовков\objects 3D</Filter>
     </ClInclude>
     <ClInclude Include="object3D.h">
-      <Filter>Файлы заголовков\objects3D</Filter>
+      <Filter>Файлы заголовков\objects 3D</Filter>
     </ClInclude>
     <ClInclude Include="segment3D.h">
-      <Filter>Файлы заголовков\objects3D</Filter>
+      <Filter>Файлы заголовков\objects 3D</Filter>
     </ClInclude>
     <ClInclude Include="conicsection.h">
-      <Filter>Файлы заголовков\conicsections</Filter>
+      <Filter>Файлы заголовков\conic sections</Filter>
     </ClInclude>
     <ClInclude Include="ellipse.h">
-      <Filter>Файлы заголовков\conicsections</Filter>
+      <Filter>Файлы заголовков\conic sections</Filter>
     </ClInclude>
     <ClInclude Include="orbit.h">
       <Filter>Файлы заголовков\orbits</Filter>
@@ -117,7 +132,16 @@
       <Filter>Файлы заголовков\satellites</Filter>
     </ClInclude>
     <ClInclude Include="groundobject.h">
-      <Filter>Файлы заголовков\groundobjects</Filter>
+      <Filter>Файлы заголовков\ground objects</Filter>
+    </ClInclude>
+    <ClInclude Include="datetime.h">
+      <Filter>Файлы заголовков\date and time</Filter>
+    </ClInclude>
+    <ClInclude Include="date.h">
+      <Filter>Файлы заголовков\date and time</Filter>
+    </ClInclude>
+    <ClInclude Include="time.h">
+      <Filter>Файлы заголовков\date and time</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

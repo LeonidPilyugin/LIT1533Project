@@ -4,10 +4,10 @@
 
 
 
-Segment3D::Segment3D()
+Segment3D::Segment3D() :
+	Segment3D(0, 0, 0, 1, 1, 1)
 {
-	first = Point3D();
-	last = Point3D();
+
 }
 
 Segment3D::Segment3D(Point3D first, Point3D last)
@@ -16,22 +16,24 @@ Segment3D::Segment3D(Point3D first, Point3D last)
 	this->last = last;
 }
 
-Segment3D::Segment3D(double x1, double y1, double z1, double x2, double y2, double z2)
+Segment3D::Segment3D(double x1, double y1, double z1, double x2, double y2, double z2) :
+	Segment3D(Point3D(x1, y1, z1), Point3D(x2, y2, z2))
 {
-	first = Point3D(x1, y1, z1);
-	last = Point3D(x2, y2, z2);
+
 }
 
-Segment3D::Segment3D(PyObject* tuple)
+Segment3D::Segment3D(PyObject* tuple) :
+	Segment3D(PyTuple_GetItem(tuple, 0), PyTuple_GetItem(tuple, 1), PyTuple_GetItem(tuple, 2),
+		PyTuple_GetItem(tuple, 3), PyTuple_GetItem(tuple, 4), PyTuple_GetItem(tuple, 5))
 {
-	first = Point3D(PyTuple_GetItem(tuple, 0), PyTuple_GetItem(tuple, 1), PyTuple_GetItem(tuple, 2));
-	last = Point3D(PyTuple_GetItem(tuple, 3), PyTuple_GetItem(tuple, 4), PyTuple_GetItem(tuple, 5));
+
 }
 
-Segment3D::Segment3D(PyObject* x1, PyObject* y1, PyObject* z1, PyObject* x2, PyObject* y2, PyObject* z2)
+Segment3D::Segment3D(PyObject* x1, PyObject* y1, PyObject* z1, PyObject* x2, PyObject* y2, PyObject* z2) :
+	Segment3D(PyFloat_AsDouble(x1), PyFloat_AsDouble(y1), PyFloat_AsDouble(z1),
+		PyFloat_AsDouble(x2), PyFloat_AsDouble(y2), PyFloat_AsDouble(z2))
 {
-	first = Point3D(x1, y1, z1);
-	last = Point3D(x2, y2, z2);
+
 }
 
 Point3D Segment3D::get_first()

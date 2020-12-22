@@ -20,17 +20,3 @@ bool set_full_symmetric_angle(double*, double, double); //sets angle a value if 
 
 bool set_elliptic_angle(double*, double); //sets angle a value if it is < pi and >= -pi and returns true, if angle is set
 
-
-
-struct DateTime
-{
-	int year;
-	int month;
-	int day;
-	int hour;
-	int minute;
-	int second;
-	int millisecond;
-};
-
-double get_star_time(DateTime*);

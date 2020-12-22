@@ -3,11 +3,9 @@
 
 // This module contains description of the methods of the classes Orbit and EllipticOrbit
 
-Orbit::Orbit()
+Orbit::Orbit() : Orbit(0.0, 0.0, 0.0)
 {
-	inclination = 0.0;
-	ascending_node_longitude = 0.0;
-	periapsis_argument = 0.0;
+
 }
 
 Orbit::Orbit(double inclination, double ascending_node_longitude,
@@ -18,17 +16,17 @@ Orbit::Orbit(double inclination, double ascending_node_longitude,
 	this->periapsis_argument = periapsis_argument;
 }
 
-Orbit::Orbit(PyObject* tuple)
+Orbit::Orbit(PyObject* tuple) :
+	Orbit(PyTuple_GetItem(tuple, 0), PyTuple_GetItem(tuple, 1), PyTuple_GetItem(tuple, 2))
 {
-	set_tuple(tuple);
+
 }
 
-Orbit::Orbit(PyObject* inclination, PyObject* ascending_node_longitude,
-	PyObject* periapsis_argument)
+Orbit::Orbit(PyObject* inclination, PyObject* ascending_node_longitude, PyObject* periapsis_argument) :
+	Orbit(PyFloat_AsDouble(inclination), PyFloat_AsDouble(ascending_node_longitude),
+		PyFloat_AsDouble(periapsis_argument))
 {
-	this->inclination = PyFloat_AsDouble(inclination);
-	this->ascending_node_longitude = PyFloat_AsDouble(ascending_node_longitude);
-	this->periapsis_argument = PyFloat_AsDouble(periapsis_argument);
+
 }
 
 double Orbit::get_inclination()

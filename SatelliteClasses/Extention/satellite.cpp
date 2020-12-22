@@ -3,10 +3,9 @@
 
 // This module contains description of the methods of the classes Satellite and EllipticSatellite
 
-Satellite::Satellite()
+Satellite::Satellite() : Satellite(0.0, 1)
 {
-	true_anomaly = 0.0;
-	direction_ratio = 1;
+
 }
 
 Satellite::Satellite(double true_anomaly, int direction_ratio)
@@ -15,15 +14,16 @@ Satellite::Satellite(double true_anomaly, int direction_ratio)
 	this->direction_ratio = direction_ratio;
 }
 
-Satellite::Satellite(PyObject* tuple)
+Satellite::Satellite(PyObject* tuple) :
+	Satellite(PyTuple_GetItem(tuple, 0), PyTuple_GetItem(tuple, 1))
 {
-	set_tuple(tuple);
+
 }
 
-Satellite::Satellite(PyObject* true_anomaly, PyObject* direction_ratio)
+Satellite::Satellite(PyObject* true_anomaly, PyObject* direction_ratio) :
+	Satellite(PyFloat_AsDouble(true_anomaly), PyLong_AsLong(direction_ratio))
 {
-	this->true_anomaly = PyFloat_AsDouble(true_anomaly);
-	this->direction_ratio = PyLong_AsLong(direction_ratio);
+
 }
 
 double Satellite::get_true_anomaly()

@@ -3,9 +3,9 @@
 
 
 
-Point3D::Point3D()
+Point3D::Point3D() : Point3D(0.0, 0.0, 0.0)
 {
-	x = y = z = 0.0;
+
 }
 
 Point3D::Point3D(double x, double y, double z)
@@ -15,16 +15,16 @@ Point3D::Point3D(double x, double y, double z)
 	this->z = z;
 }
 
-Point3D::Point3D(PyObject* tuple)
+Point3D::Point3D(PyObject* tuple) :
+	Point3D(PyTuple_GetItem(tuple, 0), PyTuple_GetItem(tuple, 1), PyTuple_GetItem(tuple, 2))
 {
-	set_tuple(tuple);
+
 }
 
-Point3D::Point3D(PyObject* x, PyObject* y, PyObject* z)
+Point3D::Point3D(PyObject* x, PyObject* y, PyObject* z) :
+	Point3D(PyFloat_AsDouble(x), PyFloat_AsDouble(y), PyFloat_AsDouble(z))
 {
-	this->x = PyFloat_AsDouble(x);
-	this->y = PyLong_AsLong(y);
-	this->z = PyLong_AsLong(z);
+
 }
 
 double Point3D::get_x()

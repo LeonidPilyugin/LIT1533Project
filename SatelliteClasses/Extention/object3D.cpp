@@ -3,10 +3,9 @@
 
 
 
-Object3D::Object3D()
+Object3D::Object3D() : Object3D(0, 0, 0, 10)
 {
-	center = Point3D();
-	radius = 10.0;
+
 }
 
 Object3D::Object3D(Point3D center, double radius)
@@ -15,21 +14,23 @@ Object3D::Object3D(Point3D center, double radius)
 	this->radius = radius;
 }
 
-Object3D::Object3D(double x, double y, double z, double radius)
+Object3D::Object3D(double x, double y, double z, double radius) :
+	Object3D(Point3D(x, y, z), radius)
 {
-	center = Point3D(x, y, z);
-	this->radius = radius;
+
 }
 
-Object3D::Object3D(PyObject* tuple)
+Object3D::Object3D(PyObject* tuple) :
+	Object3D(PyTuple_GetItem(tuple, 0), PyTuple_GetItem(tuple, 1),
+		PyTuple_GetItem(tuple, 2), PyTuple_GetItem(tuple, 3))
 {
-	set_tuple(tuple);
+
 }
 
-Object3D::Object3D(PyObject* x, PyObject* y, PyObject* z, PyObject* radius)
+Object3D::Object3D(PyObject* x, PyObject* y, PyObject* z, PyObject* radius) :
+	Object3D(Point3D(x, y, z), PyFloat_AsDouble(radius))
 {
-	center = Point3D(x, y, z);
-	this->radius = PyFloat_AsDouble(radius);
+
 }
 
 Point3D Object3D::get_center()
